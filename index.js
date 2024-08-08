@@ -16,9 +16,7 @@ const songs = [
     { title: "Africa", artist: "Toto", genre: "Pop" },
     { title: "Jump", artist: "Van Halen", genre: "Rock" },
     { title: "Outstanding", artist: "The Gap Band", genre: "R&B" },
-    // Feel free to add even more songs
 ];
-
 
 // Object containing each Guardian's preferred genre
 const guardians = {
@@ -27,16 +25,29 @@ const guardians = {
     "Drax": "Rock",
     "Rocket": "R&B",
     "Groot": "Pop",
-    // Add preferences for Drax, Rocket, and Groot
 };
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
-    // Use the map() function to create playlists for each Guardian
-    // Your code here
+    const playlistsContainer = document.getElementById('playlists');    //Linking the div to function
+    
+    // Generate HTML for each guardian's playlist
+    const playlistContent = Object.entries(guardians).map(([guardian, genre]) => { //to use map() conversion of the object into an array with entries()
+        //Playlist variable that filters songs based on guardians genre
+        const playlist = songs.filter(song => song.genre === genre); 
+        // Create HTML for the guardian's playlist, loop over plalist with a map() to make <p> elements for each song that matches the genre
+        // returning the tilte of the song and the artist
+        return `
+            <div class="playlist">
+                <h2>${guardian}'s Playlist</h2>
+                ${playlist.map(song => `<p><span class = 'song-title'>${song.title}</span> by ${song.artist}</p>`).join('')}
+            </div>
+        `;
+    }).join(''); // The use of join enables the strings to be combined in the divs via an empty string between
+
+    // Linking the playlist content map() with the container contets
+    playlistsContainer.innerHTML = playlistContent;
 }
 
-// Call generatePlaylist and display the playlists for each Guardian
+// Calling the function to populate the Div's for each guardian
 generatePlaylist(guardians, songs);
-
-
