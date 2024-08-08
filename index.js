@@ -11,6 +11,11 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
+    { title: "Don't Stop Believing", artist: "Journey", genre: "Rock" },
+    { title: "Every Little Step", artist: "Bobby Brown", genre: "R&B" },
+    { title: "Africa", artist: "Toto", genre: "Pop" },
+    { title: "Jump", artist: "Van Halen", genre: "Rock" },
+    { title: "Outstanding", artist: "The Gap Band", genre: "R&B" },
     // Feel free to add even more songs
 ];
 
