@@ -35,7 +35,7 @@ function generatePlaylist(guardians, songs) {
     const playlistContent = Object.entries(guardians).map(([guardian, genre]) => { //to use map() conversion of the object into an array with entries()
         //Playlist variable that filters songs based on guardians genre
         const playlist = songs.filter(song => song.genre === genre); 
-        // Create HTML for the guardian's playlist, loop over plalist with a map() to make <p> elements for each song that matches the genre
+        // Create HTML for the guardian's playlist, loop over plalist with a map() to make <h2> and <p> elements for each song that matches the genre
         // returning the tilte of the song and the artist
         return `
             <div class="playlist">
